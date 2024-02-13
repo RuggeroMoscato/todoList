@@ -1,7 +1,8 @@
 import {
   ADD_TODO,
   FILTER_TODOS,
-  MARK_COMPLEATED,
+  MARK_ALL_COMPLETED,
+  MARK_COMPLETED,
   MARK_INCOMPLETE,
   REMOVE_TODO,
   TOGGLE_TODO,
@@ -44,7 +45,7 @@ const todoReducer = (state = initialState, action) => {
         searchTerm: state.searchTerm,
       };
 
-    case MARK_COMPLEATED:
+    case MARK_COMPLETED:
       return {
         todos: state.todos.map((todo, index) =>
           index === action.payload.id ? { ...todo, completed: true } : todo
@@ -76,14 +77,17 @@ const todoReducer = (state = initialState, action) => {
         searchTerm: action.payload.searchTerm,
       };
 
-    case MARK_INCOMPLETE:
+    case MARK_ALL_COMPLETED:
       return {
         todos: state.todos.map((todo) => ({ ...todo, completed: true })),
         filter: state.filter,
         searchTerm: state.searchTerm,
       };
 
+      
+
     default:
       return state;
   }
 };
+export default {todoReducer};

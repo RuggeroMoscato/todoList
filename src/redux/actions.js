@@ -24,7 +24,7 @@ export const removeTodo = (id) => ({
   payload: { id },
 });
 
-export const markCompleated = (id) => ({
+export const markCompleted = (id) => ({
   type: MARK_COMPLETED,
   payload: { id },
 });
@@ -33,7 +33,7 @@ export const markIncomplete = (id) => ({
   payload: { id },
 });
 
-export const MmarkAllCompleated = () => ({
+export const markAllCompleted = () => ({
   type: MARK_ALL_COMPLETED,
 });
 
@@ -46,3 +46,4 @@ export const updateSearchTerm = (searchTerm) => ({
   type: UPDATE_SEARCH_TERM,
   payload: { searchTerm },
 });
+export default {addTodo,updateSearchTerm,filterTodos,markAllCompleted,markCompleted,markIncomplete,removeTodo,toggleTodo}
