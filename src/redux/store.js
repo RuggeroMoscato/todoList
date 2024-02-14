@@ -1,24 +1,21 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, nanoid } from '@reduxjs/toolkit'
 
-export const Global = createSlice({
-  name: "global",
-  initialState: {
-    ip: '',
-    page: false,
-  },
+const todosSlice = createSlice({
+  name: 'todos',
+  initialState: [],
   reducers: {
-    saveIP: (state, action) => {
-      state.ip = action.payload;
-    },
-    savePage: (state, action) => {
-      state.page = action.payload;
+    addTodo: {
+      reducer: (state, action) => {
+        state.push(action.payload)
+      },
+      prepare: (text) => {
+        const id = nanoid()
+        return { payload: { id, text } }
+      },
     },
   },
-});
-
-export const { saveIP, savePage } = Global.actions;
-export default Global.reducer;
-
+})
 
 //cosa significa deprecato? sono le funzioni che venivano usate prima ma che sono diventate obsolete.
 //come usare lo store? Per prima cosa bisogna andare in index.js e mettere tutta l'app dentro un <Provider>.
+//per chiudere il terminale più velocemente premere control c.
