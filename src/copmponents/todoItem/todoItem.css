@@ -1,0 +1,37 @@
+#li{
+display: flex;
+justify-content: space-between;
+flex-direction: row;
+}
+.todo_item{
+    display: flex;
+    justify-content: center;
+}
+#span{
+    margin: 4px;
+    color: gray;
+}
+.blue__button{
+    background-color: blue;
+    color: white;
+    border-radius: 2px;
+    margin: 2px;
+}
+.green__button{
+    background-color: green;
+    color: white;
+    border-radius: 2px;
+    margin: 2px;
+}
+.red__button{
+    background-color: red;
+    color: white;
+    border-radius: 2px;
+    margin: 2px;
+}
+.yellow__button{
+    background-color: red;
+    color: white;
+    border-radius: 2px;
+    margin: 2px;
+}
