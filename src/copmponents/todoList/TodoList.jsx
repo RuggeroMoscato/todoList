@@ -2,25 +2,27 @@ import { useSelector } from "react-redux";
 import TodoItem from "../todoItem/TodoItem";
 
 const TodoList = () => {
-  const filteredTodos = useSelector((state) => {
-    const todos = state?.todos;
-    const filter = state?.filter;
-    const searchTerm = state?.searchTerm?.toLowerCase();
+  // const filteredTodos = useSelector((state) => {
+  //   const todos = state?.tasks.todos;
+  //   const filter = state?.filter;
+  //   const searchTerm = state?.searchTerm?.toLowerCase();
 
-    return todos?.filter((todo) => {
-      const matchesFilter =
-        (filter === "COMPLETED" && todo.completed) ||
-        (filter === "INCOMPLETE" && !todo.completed) ||
-        filter === "ALL";
+  //   return todos.filter((todo) => {
+  //     const matchesFilter =
+  //       (filter === "COMPLETED" && todo.completed) ||
+  //       (filter === "INCOMPLETE" && !todo.completed) ||
+  //       filter === "ALL";
 
-      const matchesSearch = todo.text.toLowerCase().includes(searchTerm);
+  //     const matchesSearch = todo.text.toLowerCase().includes(searchTerm);
 
-      return matchesFilter && matchesSearch;
-    });
-  });
+  //     return matchesFilter && matchesSearch;
+  //   });
+  // });
 
-  console.log("Filtered Todos:", filteredTodos);
-
+  // console.log("Filtered Todos:", filteredTodos);
+  
+const filteredTodos=useSelector((state)=>state.tasks.todos)
+console.log(filteredTodos)
   return (
     <ul>
       <li className="my-2 text-sm italic">All Your Notes Here...</li>
