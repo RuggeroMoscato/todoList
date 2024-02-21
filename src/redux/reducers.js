@@ -1,7 +1,7 @@
 import { createSlice, nanoid } from "@reduxjs/toolkit";
 
 export const TodosReducer = createSlice({
-  name: "global",
+  name: "Todos",
   initialState: {
     todos: [],
     filter: "ALL",
@@ -9,7 +9,11 @@ export const TodosReducer = createSlice({
   },
   reducers: {
     addTodo: (state, action) => {
-      state.todos.push({ text: action.payload, completed: false ,id: nanoid()});
+      state.todos.push({
+        text: action.payload,
+        completed: false,
+        id: nanoid(),
+      });
     },
     toggleTodo: (state, action) => {
       state.todos = state.todos.map((todo) =>
@@ -21,21 +25,21 @@ export const TodosReducer = createSlice({
       // (searchTerm = state.searchTerm);
     },
     removeTodo: (state, action) => {
-      state.todos = state.todos.filter((item) => item.id !== action.payload.id)
-              // filter= state.filter,
-              //  searchTerm =state.searchTerm
+      state.todos = state.todos.filter((item) => item.id !== action.payload.id);
+      // filter= state.filter,
+      //  searchTerm =state.searchTerm
     },
     markCompleted: (state, action) => {
-      // todos= state.todos.map((todo, index) =>
-      //           index === action.payload.id ? { ...todo, completed: true } : todo
-      //         ),
+      state.todos = state.todos.map((todo) =>
+        todo.id === action.payload.id ? { ...todo, completed: true } : todo
+      );
       //         filter= state.filter,
       //         searchTerm= state.searchTerm
     },
     markIncomplete: (state, action) => {
-      // state.todos= state.todos.map((todo, index) =>
-      //   index === action.payload.id ? { ...todo, completed: false } : todo
-      // ),
+      state.todos= state.todos.map((todo) =>
+        todo.id === action.payload.id ? { ...todo, completed: false } : todo
+      )
       // filter= state.filter,
       // searchTerm= state.searchTerm
     },
@@ -61,11 +65,11 @@ export const {
   addTodo,
   removeTodo,
   toggleTodo,
-  markCompleted,
-  markIncomplete,
-  markAllCompleted,
   filterTodos,
   updateSearchTerm,
+  markAllCompleted,
+  markCompleted,
+  markIncomplete
 } = TodosReducer.actions;
 export default TodosReducer.reducer;
-// a cosa serve'map'? a mappare l'array per poi fare una ricerca.
+

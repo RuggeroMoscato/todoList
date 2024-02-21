@@ -6,6 +6,7 @@
   align-items: center;
   gap: 30px;
 font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+min-width: 400px;
 }
 .todo__add {
   display: flex;

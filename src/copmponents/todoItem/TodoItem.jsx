@@ -39,15 +39,15 @@ const TodoItem = ({ todo, index }) => {
         {!todo.completed && (
           <button
             className="red__button"
-            onClick={() => dispatch(markCompleted(index))}
+            onClick={() => dispatch(markCompleted({id:todo.id}))}
           >
             <FaCheck />
           </button>
         )}
         {todo.completed && (
           <button
-            className=".yellow__button"
-            onClick={() => dispatch(markIncomplete(index))}
+            className="yellow__button"
+            onClick={() => dispatch(markIncomplete({id:todo.id}))}
           >
             <FaTimes />
           </button>

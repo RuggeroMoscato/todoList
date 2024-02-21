@@ -71,4 +71,3 @@ const Todo = () => {
   );
 };
 export default Todo;
-// a cosa serve lo useSelector? serve a selezionare uno stato.
