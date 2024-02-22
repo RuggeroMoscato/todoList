@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import TodoItem from "../todoItem/TodoItem";
-import './todoList.css';
-const TodoList = () => {
+import "./todoList.css";
+const TodoList = ({ filter, seatchterm }) => {
   // const filteredTodos = useSelector((state) => {
   //   const todos = state.tasks.todos;
   //   const filter = state.filter;
@@ -20,9 +20,9 @@ const TodoList = () => {
   // });
 
   // console.log("Filtered Todos:", filteredTodos);
-  
- const filteredTodos=useSelector((state)=>state.tasks.todos)
-console.log(filteredTodos)
+
+  const filteredTodos = useSelector((state) => state.tasks.todos);
+  console.log(filteredTodos);
   return (
     <ul>
       <li className="todoItem">Tutte le tue note qui:</li>

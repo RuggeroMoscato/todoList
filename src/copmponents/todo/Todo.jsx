@@ -1,12 +1,12 @@
 import { useState } from "react";
-import {  updateSearchTerm } from "../../redux/actions";
+import { updateSearchTerm } from "../../redux/actions";
 import "./todo.css";
 import { useDispatch, useSelector } from "react-redux";
 import { IoIosSearch } from "react-icons/io";
 import { FaPlus } from "react-icons/fa";
 import TodoList from "../todoList/TodoList";
 import FilterButton from "../filterButton/FilterButton";
-import {addTodo} from '../../redux/reducers'
+import { addTodo } from "../../redux/reducers";
 
 const Todo = () => {
   const todos = useSelector((state) => state.todo);
@@ -65,7 +65,7 @@ const Todo = () => {
         </div>
       </div>
       <div className="todo__list">
-        <TodoList />
+        <TodoList filter={filter} searchTerm={searchTerm} />
       </div>
     </div>
   );

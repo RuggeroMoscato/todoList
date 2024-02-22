@@ -12,7 +12,7 @@ import {
   FaCheck,
   FaTimes,
 } from "react-icons/fa";
-import './todoItem.css'
+import "./todoItem.css";
 
 const TodoItem = ({ todo, index }) => {
   const dispatch = useDispatch();
@@ -26,20 +26,20 @@ const TodoItem = ({ todo, index }) => {
       <div className="space-x-3 ml-8">
         <button
           className="blue__button"
-          onClick={() => dispatch(toggleTodo({id:todo.id}))}
+          onClick={() => dispatch(toggleTodo({ id: todo.id }))}
         >
           {todo.completed ? <FaToggleOff /> : <FaToggleOn />}
         </button>
         <button
-          className="green__button"
-          onClick={() => dispatch(removeTodo({id:todo.id}))}
+          className="red__button"
+          onClick={() => dispatch(removeTodo({ id: todo.id }))}
         >
           <FaTrash />
         </button>
         {!todo.completed && (
           <button
-            className="red__button"
-            onClick={() => dispatch(markCompleted({id:todo.id}))}
+            className="green__button"
+            onClick={() => dispatch(markCompleted({ id: todo.id }))}
           >
             <FaCheck />
           </button>
@@ -47,7 +47,7 @@ const TodoItem = ({ todo, index }) => {
         {todo.completed && (
           <button
             className="yellow__button"
-            onClick={() => dispatch(markIncomplete({id:todo.id}))}
+            onClick={() => dispatch(markIncomplete({ id: todo.id }))}
           >
             <FaTimes />
           </button>

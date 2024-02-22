@@ -15,11 +15,11 @@ const FilterButton = () => {
         value={currentFilter}
         onChange={(e) => handleFilter(e.target.value)}
       >
-        <option value="All">All</option>
-        <option value="COMPLETE">Complete</option>
-        <option value="INCOMPLETE">Incomplete</option>
+        <option value="ALL">Tutti</option>
+        <option value="COMPLETE">Completati</option>
+        <option value="INCOMPLETE">Non completati</option>
       </select>
-      <button onClick={() => dispatch(markAllCompleted())}>Mark all Completed</button>
+      <button onClick={() => dispatch(markAllCompleted())}>Segna tutti</button>
     </div>
   );
 };

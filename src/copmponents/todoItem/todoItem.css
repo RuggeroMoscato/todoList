@@ -17,13 +17,13 @@ flex-direction: row;
     border-radius: 2px;
     margin: 2px;
 }
-.green__button{
+.red__button{
     background-color: red;
     color: white;
     border-radius: 2px;
     margin: 2px;
 }
-.red__button{
+.green__button{
     background-color: green;
     color: white;
     border-radius: 2px;

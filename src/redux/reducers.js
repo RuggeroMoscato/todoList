@@ -21,42 +21,42 @@ export const TodosReducer = createSlice({
           ? { ...todo, completed: !todo.completed }
           : todo
       );
-      // (filter = state.filter),
-      // (searchTerm = state.searchTerm);
+      (state.filter = action.payload.filter)
+        (state.searchTerm = action.payload.searchTerm)
     },
     removeTodo: (state, action) => {
       state.todos = state.todos.filter((item) => item.id !== action.payload.id);
-      // filter= state.filter,
-      //  searchTerm =state.searchTerm
+      (state.filter = action.payload.filter)
+        (state.searchTerm = action.payload.searchTerm)
     },
     markCompleted: (state, action) => {
       state.todos = state.todos.map((todo) =>
         todo.id === action.payload.id ? { ...todo, completed: true } : todo
       );
-      //         filter= state.filter,
-      //         searchTerm= state.searchTerm
+      (state.filter = action.payload.filter)
+        (state.searchTerm = action.payload.searchTerm)
     },
     markIncomplete: (state, action) => {
-      state.todos= state.todos.map((todo) =>
+      state.todos = state.todos.map((todo) =>
         todo.id === action.payload.id ? { ...todo, completed: false } : todo
-      )
-      // filter= state.filter,
-      // searchTerm= state.searchTerm
+      );
+      (state.filter = action.payload.filter)
+      (state.searchTerm = action.payload.searchTerm)
     },
-    markAllCompleted: (state, filter) => {
-      // state.todos= state.todos.map((todo) => ({ ...todo, completed: true })),
-      //   filter= state.filter,
-      //   searchTerm= state.searchTerm
+    markAllCompleted: (state, action) => {
+      state.todos = state.todos.map((todo) => ({ ...todo, completed: true }));
+      (state.filter = action.payload.filter)
+      (state.searchTerm = action.payload.searchTerm)
     },
     filterTodos: (state, action) => {
-      // state.todos= state.todos,
-      //         filter= action.payload.filter,
-      //         searchTerm= state.searchTerm
+       (state.todos = state.todos)
+      state.filter = action.payload.filter;
+      (state.searchTerm = action.payload.searchTerm)
     },
     updateSearchTerm: (state, action) => {
-      // state.todos= state.todos,
-      //         filter= state.filter,
-      //         searchTerm= action.payload.searchTerm
+       (state.todos = state.todos)
+         (state.filter = action.payload.filter)
+      state.searchTerm = action.payload.searchTerm;
     },
   },
 });
@@ -69,7 +69,6 @@ export const {
   updateSearchTerm,
   markAllCompleted,
   markCompleted,
-  markIncomplete
+  markIncomplete,
 } = TodosReducer.actions;
 export default TodosReducer.reducer;
-
