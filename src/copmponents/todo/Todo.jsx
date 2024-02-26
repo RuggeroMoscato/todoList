@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { updateSearchTerm } from "../../redux/actions";
+import { updateSearchTerm } from "../../redux/reducers";
 import "./todo.css";
 import { useDispatch, useSelector } from "react-redux";
 import { IoIosSearch } from "react-icons/io";
@@ -58,8 +58,8 @@ const Todo = () => {
             type="text"
             placeholder="Cerca"
           />
-          <button onClick={handleAddTodoClick}>
-            {" "}
+          <button onClick={(e) => handleSearchChange(e.target.value)}>
+            {""}
             <IoIosSearch />
           </button>
         </div>

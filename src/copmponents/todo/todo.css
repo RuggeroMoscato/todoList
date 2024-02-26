@@ -72,3 +72,9 @@ height: 100%;
   justify-content: left;
   align-items: left;
 }
+.todo__add-searchBar input{
+  border-color: white;
+}
+.todo__filter-searchBar input{
+  border-color: white;
+}

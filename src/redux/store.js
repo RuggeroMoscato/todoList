@@ -15,4 +15,3 @@ export default store;
 // a cosa serve lo useSelector? serve a selezionare uno stato.
 // a cosa serve'map'? a mappare l'array per poi fare una ricerca.
 //come eliminare un elemento da un array? usa filter.
-

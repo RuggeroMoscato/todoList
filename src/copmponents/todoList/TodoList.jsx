@@ -1,31 +1,27 @@
 import { useSelector } from "react-redux";
 import TodoItem from "../todoItem/TodoItem";
 import "./todoList.css";
-const TodoList = ({ filter, seatchterm }) => {
-  // const filteredTodos = useSelector((state) => {
-  //   const todos = state.tasks.todos;
-  //   const filter = state.filter;
-  //   const searchTerm = state.searchTerm.toLowerCase();
+const TodoList = ({ filter, searchTerm }) => {
+  const filteredTodos = useSelector((state) => {
+    const todos = state.tasks.todos;
+    const filter = state.tasks.filter;
+    const searchTerm = state.tasks.searchTerm;
 
-  //   return todos.filter((todo) => {
-  //     const matchesFilter =
-  //       (filter === "COMPLETED" && todo.completed) ||
-  //       (filter === "INCOMPLETE" && !todo.completed) ||
-  //       filter === "ALL";
+    return todos.filter((todo) => {
+      const matchesFilter =
+        (filter === "COMPLETED" && todo.completed) ||
+        (filter === "INCOMPLETE" && !todo.completed) ||
+        filter === "ALL";
 
-  //     const matchesSearch = todo.text.toLowerCase().includes(searchTerm);
+      const matchesSearch = todo.text.toLowerCase().includes(searchTerm);
 
-  //     return matchesFilter && matchesSearch;
-  //   });
-  // });
+      return matchesFilter && matchesSearch;
+    });
+  });
 
-  // console.log("Filtered Todos:", filteredTodos);
-
-  const filteredTodos = useSelector((state) => state.tasks.todos);
-  console.log(filteredTodos);
   return (
-    <ul>
-      <li className="todoItem">Tutte le tue note qui:</li>
+    <ul className="unordered-todos">
+      
       {filteredTodos?.map((todo, index) => (
         <TodoItem key={index} todo={todo} index={index} />
       ))}

@@ -1,4 +1,8 @@
-.todoItem {
+#li {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.unordered-todos {
   list-style-type: none;
+  display: flex;
+  flex-direction: column;
 }
