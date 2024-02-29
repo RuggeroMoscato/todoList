@@ -19,7 +19,8 @@ const Todo = () => {
     dispatch(addTodo(text));
   };
 
-  const handleAddTodoClick = () => {
+  const handleAddTodoClick = (e) => {
+    e.preventDefault()
     if (newTodoText.trim() !== "") {
       handleAddTodo(newTodoText.trim());
       setNewTodoText("");
@@ -35,12 +36,14 @@ const Todo = () => {
       <h1>To do list </h1>
       <div className="todo__add">
         <div className="todo__add-searchBar">
-          <input
+          <form className="todo_add-form"  onSubmit={handleAddTodoClick}>
+          <input 
             value={newTodoText}
             onChange={(e) => setNewTodoText(e.target.value)}
             type="text"
             placeholder="Aggiungi cose da fare"
           />
+          </form>
           <button onClick={handleAddTodoClick}>
             {" "}
             <FaPlus />
@@ -52,7 +55,7 @@ const Todo = () => {
           <FilterButton />
         </div>
         <div className="todo__filter-searchBar">
-          <input
+          <input 
             value={searchTerm}
             onChange={(e) => handleSearchChange(e.target.value)}
             type="text"

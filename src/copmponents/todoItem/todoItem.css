@@ -1,12 +1,9 @@
-.li{
-display: flex;
+
+.todoItem{
+    display: flex;
 justify-content: space-between;
 flex-direction: row;
-font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-}
-.todo_item{
-    display: flex;
-    justify-content: center;
+
 }
 #span{
     margin: 4px;
@@ -39,4 +36,15 @@ font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     border-radius: 2px;
     margin: 2px;
     border-color: yellow;
+}
+.todo_item-text{
+    display: flex;
+   gap: 20px;
+   font-family: "Fira Sans", sans-serif;
+   font-size: larger;
+}
+.todo_item-buttons{
+    display: flex;
+    justify-content: right;
+    margin-right: 5%;
 }

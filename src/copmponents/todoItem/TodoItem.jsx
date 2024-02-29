@@ -18,12 +18,12 @@ const TodoItem = ({ todo, index }) => {
   const dispatch = useDispatch();
 
   return (
-    <li>
-      <div className="todo_item">
+    <li className="todoItem">
+      <div className="todo_item-text">
         <span>{index + 1}.</span>
         <span>{todo.text}</span>
       </div>
-      <div className="space-x-3 ml-8">
+      <div className="todo_item-buttons">
         <button
           className="blue__button"
           onClick={() => dispatch(toggleTodo({ id: todo.id }))}

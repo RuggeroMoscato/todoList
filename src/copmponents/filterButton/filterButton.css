@@ -1,8 +1,12 @@
 .todo__filterButton{
     display: flex;
-    
+    font-family: "Fira Sans", sans-serif;
 }
 .todo__filterButton select{
     border-color: white;
     border-radius: 2px;
+    font-family: "Fira Sans", sans-serif;
+}
+.todo__filterButton button{
+    font-family: "Fira Sans", sans-serif;
 }
